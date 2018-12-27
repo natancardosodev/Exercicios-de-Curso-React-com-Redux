@@ -24,5 +24,21 @@ module.exports = {
             // pasta base onde terá todos os arquivos a serem carregados
             // dentro da pasta public haverá um index.html 
             // que fará referência para o bundle, para testes de console
+    },
+    module: {
+        // sistema de modulos do ES2015 com Babel, aceitar os imports
+        loaders: [{
+            // carregador de arquivos
+            test: /.js?$/,
+            // arquivos terminados .js
+            loader: 'babel-loader',
+            // dependecia a ser usada
+            exclude: /node_modules/,
+            // não seja lida esse diretorio
+            query: {
+                presets: ['es2015']
+                    // linguagem a ser transpilada
+            }
+        }]
     }
 }
