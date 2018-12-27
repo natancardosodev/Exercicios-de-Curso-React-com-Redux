@@ -5,7 +5,7 @@ module.exports = {
     // objeto que configura toda a aplicação
     // realização de transpiler
     // para o node.js colocando export ficará visivel fora desse arquivo
-    entry: './ex.0/index.js',
+    entry: './ex/index.js',
     // ponto de entrada para que a aplicação seja carregada pelo webpack
     output: {
         // onde será disponibilizado o resultado
