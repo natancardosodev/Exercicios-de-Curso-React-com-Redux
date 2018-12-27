@@ -4,7 +4,7 @@ const webpack = require('webpack')
 module.exports = {
     // objeto que configura toda a aplicação
     // realização de transpiler
-    // para o node.js colocando exports ficará visivel fora desse arquivo
+    // para o node.js colocando export ficará visivel fora desse arquivo
     entry: './ex/index.js',
     // ponto de entrada para que a aplicação seja carregada pelo webpack
     output: {
@@ -19,7 +19,7 @@ module.exports = {
         // servidor focado para o desenvolvimento
         // recarrega o browser quando modificado
         // gera o bundle
-        port: 8080,
+        port: 8085,
         contentBase: './public'
             // pasta base onde terá todos os arquivos a serem carregados
             // dentro da pasta public haverá um index.html 
