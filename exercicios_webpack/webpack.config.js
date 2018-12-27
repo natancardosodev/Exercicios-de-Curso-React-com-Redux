@@ -1,5 +1,7 @@
 const webpack = require('webpack')
     // referencia para o webpack
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+    // leitura dos arquivos css
 
 module.exports = {
     // objeto que configura toda a aplicação
@@ -25,6 +27,9 @@ module.exports = {
             // dentro da pasta public haverá um index.html 
             // que fará referência para o bundle, para testes de console
     },
+    plugins: [
+        new ExtractTextPlugin('app.css')
+    ],
     module: {
         // sistema de modulos do ES2015 com Babel, aceitar os imports
         loaders: [{
@@ -36,9 +41,14 @@ module.exports = {
             exclude: /node_modules/,
             // não seja lida esse diretorio
             query: {
-                presets: ['es2015']
-                    // linguagem a ser transpilada
+                presets: ['es2015', 'react'],
+                // linguagens a serem transpiladas
+                plugins: ['transform-object-rest-spread']
+                    // fará cópias de objetos em rest, ex. 3
             }
+        }, {
+            test: /\.css$/,
+            loader: ExtractTextPlugin.extract("style-loader", "css-loader")
         }]
     }
 }
