@@ -1,14 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Family from './family'
-import Member from './member'
+import SilvaFamily from './silvaFamily'
 
 ReactDOM.render(
-    <Family lastname='Silva'>
-        <Member name='Guilherme' />
-        <Member name='João' />
-        <Member name='Fernanda' />
-    </Family>
+    <SilvaFamily/>
 , document.getElementById('app'))
 // Tag html será renderizada em div com id app
 // Para isso será feito um transpiler, chamando o javascript dinamicamente
